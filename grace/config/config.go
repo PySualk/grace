@@ -3,9 +3,9 @@ package config
 import (
        "gopkg.in/yaml.v3"
        "os"
-       "path/filepath"
 )
 
+type RepoStructure map[string][]string
 
 type IgnoreConfig struct {
        Patterns []string `yaml:"ignore"`

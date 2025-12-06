@@ -1,4 +1,4 @@
-module github.com/your-org/grace
+module github.com/PySualk/grace
 
 go 1.21
 

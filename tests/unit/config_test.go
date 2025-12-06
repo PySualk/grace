@@ -23,7 +23,7 @@ package unit
 
 import (
 	"testing"
-	"github.com/your-org/grace/config"
+	"github.com/PySualk/grace/config"
 )
 
 func TestLoadConfig(t *testing.T) {

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/your-org/grace/cmd"
+import "github.com/PySualk/grace/cmd"
 
 func main() {
 	cmd.Execute()

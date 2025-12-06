@@ -4,9 +4,9 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"github.com/your-org/grace/config"
-	"github.com/your-org/grace/checker"
-	"github.com/your-org/grace/report"
+	"github.com/PySualk/grace/config"
+	"github.com/PySualk/grace/checker"
+	"github.com/PySualk/grace/report"
 )
 
 func Execute() {

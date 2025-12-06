@@ -2,7 +2,7 @@ package unit
 
 import (
 	"testing"
-	"github.com/your-org/grace/checker"
+	"github.com/PySualk/grace/checker"
 )
 
 func TestValidateStructure(t *testing.T) {
