@@ -1,10 +1,25 @@
+package config
+
+import (
+	"testing"
+	"path/filepath"
+	"gopkg.in/yaml.v3"
+)
+
 func TestIgnorePatterns(t *testing.T) {
        ignore := []string{"*.md", "tests/"}
        shouldIgnore := func(path string) bool {
 	       for _, pattern := range ignore {
-		       match, _ := filepath.Match(pattern, filepath.Base(path))
-		       if match {
-			       return true
+		       // Match against base name and full path for directory patterns
+		       if pattern[len(pattern)-1] == '/' {
+			       if filepath.Base(path)+"/" == pattern || path == pattern {
+				       return true
+			       }
+		       } else {
+			       match, _ := filepath.Match(pattern, filepath.Base(path))
+			       if match {
+				       return true
+			       }
 		       }
 	       }
 	       return false
@@ -19,12 +34,6 @@ func TestIgnorePatterns(t *testing.T) {
 	       t.Errorf("src/main.go should not be ignored")
        }
 }
-package unit
-
-import (
-	"testing"
-	"github.com/PySualk/grace/config"
-)
 
 func TestLoadConfig(t *testing.T) {
 	sample := []byte(`root:
