@@ -49,7 +49,6 @@ tests:
 
 ## CLI Options
 - `--config <path>`: Specify config file location.
-- `--fix`: Optionally create missing files/directories.
 - `--ignore <pattern>`: Ignore certain files/directories.
 
 ## Output
