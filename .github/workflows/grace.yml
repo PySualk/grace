@@ -1,9 +1,9 @@
 name: GRACE CI
 on:
   push:
-    branches: [ main, 001-grace-golang ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, 001-grace-golang ]
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,6 +16,6 @@ jobs:
       - name: Build
         run: cd grace && go build -v ./...
       - name: Test
-        run: go test ./...
+        run: cd grace && go test ./...
       - name: Lint
-        run: go run github.com/golangci/golangci-lint/cmd/golangci-lint run --config grace/.golangci.yml
+        run: cd grace && go run github.com/golangci/golangci-lint/cmd/golangci-lint run --config grace/.golangci.yml
